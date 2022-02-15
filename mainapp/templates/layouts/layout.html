@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = es>
+    <head>
+        <meta charset="utf-8" />
+        <title>sitio web django valentina carrillo</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    </head>
+    <body>
+        <header>
+            <div id="logotipo">
+            <img src="{%static 'images/logo.png'%}"></img>
+            <h1>sitio web con django</h1>
+            </div>
+        </header>
+
+        <nav>
+        <ul>
+            <li> <a href = '{% url 'index' %}'> inicio </a> </li>
+            <li> <a href = '{% url 'about' %}'>> sobre nosotros </a> </li>
+        </ul>
+        </nav>
+        <div class="barra">
+            <span class="esquina-izquierda"></span>    
+            <span class="relleno"></span>   
+            <span class="esquina-derecha"></span>  
+        </div> 
+
+        <div id="content">
+            <div class="box">
+                <h2 class = 'title'> titulo de prueba</h2>
+                {% block content%}
+                <strong>contenido por defecto</strong>
+                {% endblock %}
+            </div>
+        </div>
+
+        <footer>master en python curso
+            - {% now 'Y/m/d'%}
+        </footer>
+    </body>
+</html>

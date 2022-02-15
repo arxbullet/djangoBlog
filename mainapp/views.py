@@ -11,5 +11,5 @@ def index(request):
 
 def about(request):
     return render(request, 'mainapp/about.html', {
-        'title':'sobre, nosotros'
+        'title': 'sobre nosotros'
     })
