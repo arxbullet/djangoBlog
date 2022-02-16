@@ -25,6 +25,7 @@ class Article(models.Model):
     image = models.ImageField(default='null', verbose_name='Imagen')
     public = models.BooleanField(verbose_name='visible')
     user = models.ForeignKey(User, verbose_name='usuario', on_delete=models.CASCADE)#si borro un usuario se borram sus articulos 
+    categories = models.ManyToManyField(Category,verbose_name='categoria', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True ,verbose_name='Creado el ')
     updated_at = models.DateTimeField(auto_now_add=True ,verbose_name='Actualizado el ')
 
