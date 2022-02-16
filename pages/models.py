@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from ckeditor.fields import RichTextField
 
@@ -7,6 +8,7 @@ class Page(models.Model):
     title = models.CharField(max_length=50, verbose_name='Titulo')
     content = RichTextField( verbose_name='Contenido')
     slug = models.CharField(max_length=150, verbose_name='URL', unique=True)
+    order = models.IntegerField(verbose_name='orden' , default=0)
     public = models.BooleanField(verbose_name='visible')
     created_at = models.DateTimeField(auto_now_add=True ,verbose_name='Creado el ')
     updated_at = models.DateTimeField(auto_now_add=True ,verbose_name='Actualizado el ')
