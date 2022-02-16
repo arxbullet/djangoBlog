@@ -1,6 +1,6 @@
-from email.policy import default
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -24,6 +24,7 @@ class Article(models.Model):
     content = RichTextField( verbose_name='Contenido')
     image = models.ImageField(default='null', verbose_name='Imagen')
     public = models.BooleanField(verbose_name='visible')
+    user = models.ForeignKey(User, verbose_name='usuario', on_delete=models.CASCADE)#si borro un usuario se borram sus articulos 
     created_at = models.DateTimeField(auto_now_add=True ,verbose_name='Creado el ')
     updated_at = models.DateTimeField(auto_now_add=True ,verbose_name='Actualizado el ')
 
