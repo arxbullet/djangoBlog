@@ -17,7 +17,11 @@
         <nav>
         <ul>
             <li> <a href = '{% url 'index' %}'> inicio </a> </li>
-            <li> <a href = '{% url 'about' %}'>> sobre nosotros </a> </li>
+            {% for page in pages%}
+                <li>
+                <a href={% url 'page' page.2%}>{{page.1}} </a>
+                </li>
+            {% endfor%}
         </ul>
         </nav>
         <div class="barra">
@@ -28,7 +32,10 @@
 
         <div id="content">
             <div class="box">
+                {% block title%}
                 <h2 class = 'title'> titulo de prueba</h2>
+                {% endblock %}
+                <br>
                 {% block content%}
                 <strong>contenido por defecto</strong>
                 {% endblock %}
