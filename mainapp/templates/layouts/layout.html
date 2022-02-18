@@ -17,6 +17,13 @@
         <nav>
         <ul>
             <li> <a href = '{% url 'index' %}'> inicio </a> </li>
+            <li> <a href = '{% url 'list' %}'> categorias </a> 
+                 <ul>
+                    <li> <a href = '{% url 'list' %}'> categoria 1 </a> 
+                    <li> <a href = '{% url 'list' %}'> categoria 2 </a> 
+                    <li> <a href = '{% url 'list' %}'> categoria 3</a> 
+                 </ul>
+            </li>
             {% for page in pages%}
                 <li>
                 <a href={% url 'page' page.2%}>{{page.1}} </a>
