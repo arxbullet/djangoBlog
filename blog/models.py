@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
@@ -22,7 +23,7 @@ class Category(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=50, verbose_name='Titulo')
     content = RichTextField( verbose_name='Contenido')
-    image = models.ImageField(default='null', verbose_name='Imagen')
+    image = models.ImageField(default='null', verbose_name='Imagen', upload_to='articles')
     public = models.BooleanField(verbose_name='visible')
     user = models.ForeignKey(User, verbose_name='usuario', on_delete=models.CASCADE, editable=False)#si borro un usuario se borram sus articulos 
     categories = models.ManyToManyField(Category,verbose_name='categoria', null=True, blank=True)

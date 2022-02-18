@@ -8,6 +8,6 @@ def articles(request):
     articles = Article.objects.all()
 
     return render(request, 'articles/list.html', {
-        'title' : 'articles',
-        'articles' : articles
+        'title' : 'Articulos',
+        'articulos' : articles
     })
