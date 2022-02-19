@@ -1,4 +1,3 @@
-from unicodedata import category
 from blog.models import Category, Article
 
 def get_categories(request):
@@ -8,3 +7,4 @@ def get_categories(request):
         'categories' : categories,
         'ids': ids_Categories_in_use
     }
+    

@@ -20,7 +20,7 @@
                 <a href = '{% url 'index' %}'> inicio </a>
              </li>
             <li> 
-            <a href = '{% url 'list' %}'> categorias </a> 
+            <a href = '{% url 'category' category.0%}'> categorias </a> 
             <ul>
             {% for category in categories%}
                 <li>

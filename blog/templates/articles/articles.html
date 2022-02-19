@@ -1,0 +1,31 @@
+{% for articulo in articulos %}
+<article class='article'>   
+{%if articulo.image != null and articulo.image.url != null and articulo.image.url|length >= 1  %}
+<div class='image'>    
+    <img src="{{articulo.image.url}}"/>
+</div>
+{%endif%}
+ <div data>
+   {{articulo.title}} 
+   <br>
+    {% for category in articulo.categories.all %}
+     <a href="#"> {{category}}</a>
+     {%if forloop.counter < articulo.categories.all|length%}
+     - <!--agregar guion cuando no sea el ultimo elemento-->
+     {%endif%}
+   {% endfor %}
+
+<span class='date'>
+    {{articulo.user.email}}|
+    {{articulo.created_at}}
+</span>
+<p>
+    {{articulo.content |safe}} 
+</p>
+</div> 
+{%empty%}
+    <p>no hay articulos</p>
+<div class='clearfix'></div>
+</article>
+<br/>
+{% endfor %}

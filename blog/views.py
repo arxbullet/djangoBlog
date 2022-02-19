@@ -11,3 +11,13 @@ def articles(request):
         'title' : 'Articulos',
         'articulos' : articles
     })
+
+
+def category(request, category_id):
+
+    category = Category.objects.get(id = category_id)
+
+    return render(request, 'categories/category.html', {
+        'title' : 'Categorias',
+        'category' : category
+    })
