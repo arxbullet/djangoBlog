@@ -14,7 +14,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         if not obj.user_id : 
-            obj.user_id =  request.user_id
+            obj.user =  request.user
         obj.save()
 
 admin.site.register(Article, ArticleAdmin) 
