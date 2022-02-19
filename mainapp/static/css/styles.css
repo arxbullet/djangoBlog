@@ -200,6 +200,26 @@ nav > ul > li > ul > li:hover a{
     border: 1px solid #ddd;
 }
 
+.box a{
+    color: #444;
+
+}
+
+.box .image{
+    float:left;
+    margin-right: 20px;
+    width: 45%;
+}
+
+.box .image img{
+    width: 100%;
+}
+
+.box a:hover{
+    color: #1f7e50;
+    transition: all 100ms;
+}
+
 .box form{
     width: 40%;
 }

@@ -5,8 +5,12 @@
     <img src="{{articulo.image.url}}"/>
 </div>
 {%endif%}
- <div data>
-   {{articulo.title}} 
+ <div >
+    <h2>
+    <a href='{% url 'article' articulo.id %}'>
+         {{articulo.title}} 
+    </a> 
+    </h2>
    <br>
     {% for category in articulo.categories.all %}
      <a href="#"> {{category}}</a>
