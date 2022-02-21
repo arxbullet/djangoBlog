@@ -7,4 +7,14 @@
 
 {% block content%}
  {{pages}}
+ {% if messages%}
+    {%for message in messages%}
+    <div class='alert-success'>
+        {{message}}
+    </div>
+    {%endfor%}
+{%endif%}
+
+
+
 {% endblock %}
