@@ -17,6 +17,24 @@ body{
 
 }
 
+.alert,
+.alert-success{
+    padding: 20px;
+    background:#1f7e50;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.alert-error{
+    padding: 20px;
+    background:red;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
 .clearfix{
     clear: both;
     float: none;
@@ -227,11 +245,14 @@ nav > ul > li > ul > li:hover a{
 .box form input,
 .box form label{
     display: block;
+    padding: 5px;
     padding-left: 0px;
 }
 
 
 .box form input[type="text"],
+.box form input[type="email"],
+.box form input[type="password"],
 .box form textarea{
     width: 100%;
     margin-bottom: 10px;

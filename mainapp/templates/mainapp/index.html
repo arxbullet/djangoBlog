@@ -15,6 +15,10 @@
     {%endfor%}
 {%endif%}
 
-
+{%if user.email%}
+    <h2> Bienvenido, {{request.user.first_name}}</h2>
+{%else%}
+    <h2> identificate para mas contenido </h2>
+{%endif%}
 
 {% endblock %}

@@ -18,25 +18,35 @@
         <ul>
             <li> 
                 <a href = '{% url 'index' %}'> inicio </a>
-             </li>
-            <li> 
-            <a href = '{% url 'list' %}'> categorias </a> 
-            <ul>
-            {% for category in categories%}
-                <li>
-                    <a href={% url 'categories' category.0 %}> {{category.1}} </a>
-                </li>
-                {% endfor%}
-            </ul>
             </li>
-            {% for page in pages%}
-                <li>
-                <a href={% url 'page' page.2%}>{{page.1}} </a>
+            {%if user.email%}
+                <li> 
+                <a href = '{% url 'list' %}'> categorias </a> 
+                <ul>
+                {% for category in categories%}
+                    <li>
+                        <a href={% url 'categories' category.0 %}> {{category.1}} </a>
+                    </li>
+                    {% endfor%}
+                </ul>
                 </li>
-            {% endfor%}
+                {% for page in pages%}
+                    <li>
+                    <a href={% url 'page' page.2%}>{{page.1}} </a>
+                    </li>
+                {% endfor%}
+                <li> 
+                    <a href = '{% url 'logout' %}'> LOG OUT </a>
+                </li>
+            {%endif%}
+        
             <li> 
                 <a href = '{% url 'registro' %}'> registro </a>
-             </li>
+            </li>
+            <li> 
+                <a href = '{% url 'login' %}'> LOGIN </a>
+            </li>
+            
         </ul>
         </nav>
         <div class="barra">
